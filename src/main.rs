@@ -1,53 +1,14 @@
-enum VarInstruc {
-    Get(Loc),
-    Set(Loc),
-    Tee(Loc),
-    GlobGet(Glob),
-    GlobSet(Glob),
-}
+extern crate fuse;
 
-enum BlockInstruc {
-    Block {
-        label: Label,
-        result: Type,
-        expr: Instruc[],
-    },
-    Loop {
-        label: Label,
-        result: Prim,
-        expr: Instruc[],
-    },
-    If {
-        label: Label,
-        result: Prim,
-        then: Instruc[],
-        besides: Instruc[],
-    },
-}
+use std::env;
+use fuse::Filesystem;
 
-enum ControlInstruc {
-    Trap, // unreachable
-    Nop,
-    Br (Label),
-    BrIf (Label),
-    BrTable {
-        table: Label[],
-        default: Label,
-    },
-    Return,
-    Call (Func),
-    CallIn (Type),
-}
+struct MulaFs;
 
-enum ParamInstruc {
-    Drop,
-    Select,
-}
-
-enum MemInstruc {
+impl Filesystem for MulaFs {
 
 }
 
 fn main() {
-    println!("Hello!");
+    let mountpoint = match env::args()
 }

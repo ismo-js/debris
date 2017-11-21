@@ -2,7 +2,8 @@
 name = "neon"
 version = "0.1.0"
 authors = [
-    "Te Standby <testandby@gmail.com>"
+    "probit Labs <probitlabs@protonmail.com>"
 ]
 
 [dependencies]
+fuse = "0.3"
